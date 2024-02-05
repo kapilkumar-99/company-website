@@ -325,7 +325,7 @@ a{
 
 .software-product{
     width: 16%;
-    min-height: 250px;
+    min-height: 328px;
     border-top: 10px solid #4733c9;
     box-shadow: 0px 0px 8px 7px #F7EDFF;
     padding: 16px;
@@ -1306,7 +1306,7 @@ ul li:before{
         font-size: 40px;
     }
     .software-product{
-        min-height: 300px;
+        min-height: 400px;
     }
     .title{
         font-size: 32px;
@@ -1452,7 +1452,7 @@ ul li:before{
 
 @media only screen and (max-width: 1450px){
     .review-1{
-        height: 20vw;
+        height: 25vw;
     }
     .subscribe{
         width: 260px;
@@ -1549,7 +1549,7 @@ ul li:before{
         gap: 20px;
     }
     .software-product{
-        min-height: 295px;
+        min-height: 445px;
     }
     .achievement{
         gap: 90px;
@@ -1574,7 +1574,7 @@ ul li:before{
         padding-bottom: 135px;
     }
     .review-1{
-        height: 36vw;
+        height: 41vw;
     }
     .product-img{
         height: 200px;
@@ -1605,6 +1605,14 @@ ul li:before{
     .subscribe{
         width: 265px;
         border-radius: 50px;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1025px){
+    .skill-faq-question {
+        width: 434px;
+    }
+    .skills{
+        gap: 115px;
     }
 }
 
@@ -1745,7 +1753,7 @@ ul li:before{
         padding-bottom: 70px;
     }
     .review-1{
-        height: 35vw;
+        height: 40vw;
     }
     .commas {
         font-size: 82px;
@@ -1943,6 +1951,9 @@ ul li:before{
         font-size: 20px;
         margin-bottom: 14px;
     }
+    .skill-faq-title{
+        font-size: 14px;
+    }
     .coordinater-para{
         text-align: center;
     }
@@ -2005,6 +2016,9 @@ ul li:before{
     }
     .why-us-img-2{
         width: 200px;
+    }
+    .skill-faq-title{
+        font-size: 13px;
     }
 }
 
