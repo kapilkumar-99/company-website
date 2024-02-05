@@ -1,7 +1,7 @@
 *{
     padding: 0px;
     margin: 0px;
-    font-family: "istok web";
+    font-family: 'Istok Web';
     /* box-sizing: border-box;
     width: auto; */
 }
@@ -320,7 +320,7 @@
 
 .software-product{
     width: 16%;
-    min-height: 100px;
+    min-height: 250px;
     border-top: 10px solid #4733c9;
     box-shadow: 0px 0px 8px 7px #F7EDFF;
     padding: 16px;
@@ -1145,7 +1145,7 @@ hr{
     padding-left: 30px;
     border-radius: 15px;
     margin-top: 32px;
-    width: 234px;
+    width: 240px;
     flex-wrap: wrap;
 }
 
