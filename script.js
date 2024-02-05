@@ -62,7 +62,8 @@ var mobileMenuDisplay = 0;
 
 hamburger.addEventListener('click', function(){
     if(mobileMenuDisplay == 0){
-        mobileMenuItems.style.display = 'block';
+        mobileMenuItems.style.display = 'flex';
+        mobileMenuItems.style.flexDirection = "column";
         hamburger.innerHTML = '&#10006';
         mobileMenuDisplay = 1;
     }

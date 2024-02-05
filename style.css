@@ -6,7 +6,9 @@
     width: auto; */
 }
 
-
+html{
+    scroll-behavior: smooth;
+}
 
 .hero-section{
     background-image: url(BG1.png);
@@ -27,11 +29,14 @@
     display: flex;
     flex-wrap: wrap;
     margin-right: 0px;
-    gap: 90px;
-    margin-left: 200px;
+    gap: 65px;
+    margin-left: 35px;
 }
 
-
+a{
+    color: white;
+    text-decoration: none;
+}
 
 .menu-items{
     font-size: 16px;
@@ -94,7 +99,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 0px;
 }
 
 .middle-section{
@@ -1452,12 +1457,18 @@ ul li:before{
     .subscribe{
         width: 260px;
     }
+    .middle-section{
+        justify-content: normal;
+    }
+    .left-section{
+        margin: 0px;
+    }
 }
 
 @media only screen and (max-width: 1400px) {
     .main-menu {
         gap: 40px;
-        margin-left: 116px;
+        margin-left: 25px;
     }
     .slogen {
         font-size: 22px;
