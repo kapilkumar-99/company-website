@@ -74,35 +74,35 @@ hamburger.addEventListener('click', function(){
     }
 })
 
-setInterval(() => {
-    if(reviewCard == 1){
-        reviewCard1.style.display = 'flex';
-        // reviewCard2.style.display = 'none';
-        // reviewCard3.style.display = 'none';
-        // indicator1.style.color = '#624DE7';
-        // indicator2.style.color = '#9483FF';
-        // indicator3.style.color = '#9483FF';
-        reviewCard++;
-    }
-    else if(reviewCard == 2){
-        reviewCard1.style.display = 'none';
-        // reviewCard2.style.display = 'flex';
-        // reviewCard3.style.display = 'none';
-        // indicator1.style.color = '#9483FF';
-        // indicator2.style.color = '#624DE7'
-        // indicator3.style.color = '#9483FF';
-        reviewCard++;
-    }
-    else if(reviewCard == 3){
-        reviewCard1.style.display = 'none';
-        // reviewCard2.style.display = 'none';
-        // reviewCard3.style.display = 'flex';
-        // indicator1.style.color = '#9483FF';
-        // indicator2.style.color = '#9483FF';
-        // indicator3.style.color = '#624DE7';
-        reviewCard = 1;
-    }
-}, 5000);
+// setInterval(() => {
+//     if(reviewCard == 1){
+//         reviewCard1.style.display = 'flex';
+//         // reviewCard2.style.display = 'none';
+//         // reviewCard3.style.display = 'none';
+//         // indicator1.style.color = '#624DE7';
+//         // indicator2.style.color = '#9483FF';
+//         // indicator3.style.color = '#9483FF';
+//         reviewCard++;
+//     }
+//     else if(reviewCard == 2){
+//         reviewCard1.style.display = 'none';
+//         // reviewCard2.style.display = 'flex';
+//         // reviewCard3.style.display = 'none';
+//         // indicator1.style.color = '#9483FF';
+//         // indicator2.style.color = '#624DE7'
+//         // indicator3.style.color = '#9483FF';
+//         reviewCard++;
+//     }
+//     else if(reviewCard == 3){
+//         reviewCard1.style.display = 'none';
+//         // reviewCard2.style.display = 'none';
+//         // reviewCard3.style.display = 'flex';
+//         // indicator1.style.color = '#9483FF';
+//         // indicator2.style.color = '#9483FF';
+//         // indicator3.style.color = '#624DE7';
+//         reviewCard = 1;
+//     }
+// }, 5000);
 
 var product;
 var title;
@@ -316,17 +316,31 @@ faqArrow3.addEventListener('click', function(){
     }
 })
 
-function sendMail(){
-    var parms = {
-        name: document.getElementById("name").value,
-        cell: document.getElementById("cell").value,
-        category: document.getElementById("category").value,
-    };
-    emailjs.send("service_k1ngysc", "template_sakbrim", parms).then(res => {
-        document.getElementById('name').value = "";
-        document.getElementById('cell').value = "";
-        document.getElementById('category').value = "";
-        console.log(res);
-        alert("Message sent");
-    }).catch((err) => console.log(err));
-}
+const userName = document.getElementById("name");
+const phone = document.getElementById("cell");
+const category = document.getElementById("category");
+const form = document.getElementById('query-form');
+
+const serviceId = 'service_k1ngysc';
+const templateId = 'template_sakbrim';
+const publicKey = '5yIQR9_GJKWQEPamb';
+
+emailjs.init(publicKey);
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const params = {
+        from_name: userName.value,
+        from_phone: phone.value,
+        from_category: category.value,
+    }
+    emailjs.send(serviceId, templateId, params).then(() => {
+        userName.value = "";
+        phone.value = "";
+        category.value = "";
+        alert("Message has been sent sucessfully!!!")
+    }, (err) => {
+        console.log("Something went wrong!!!");
+    });
+});
