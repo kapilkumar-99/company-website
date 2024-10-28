@@ -47,12 +47,12 @@ const productDescription4 = document.getElementById('product-description-4');
 const learnMore4 = document.getElementById('learn-more-4');
 
 const reviewCard1 = document.getElementById('review-card-1');
-const reviewCard2 = document.getElementById('review-card-2');
-const reviewCard3 = document.getElementById('review-card-3');
+// const reviewCard2 = document.getElementById('review-card-2');
+// const reviewCard3 = document.getElementById('review-card-3');
 
-const indicator1 = document.getElementById('indicator-1');
-const indicator2 = document.getElementById('indicator-2');
-const indicator3 = document.getElementById('indicator-3');
+// const indicator1 = document.getElementById('indicator-1');
+// const indicator2 = document.getElementById('indicator-2');
+// const indicator3 = document.getElementById('indicator-3');
 
 var reviewCard = 1;
 
@@ -77,29 +77,29 @@ hamburger.addEventListener('click', function(){
 setInterval(() => {
     if(reviewCard == 1){
         reviewCard1.style.display = 'flex';
-        reviewCard2.style.display = 'none';
-        reviewCard3.style.display = 'none';
-        indicator1.style.color = '#624DE7';
-        indicator2.style.color = '#9483FF';
-        indicator3.style.color = '#9483FF';
+        // reviewCard2.style.display = 'none';
+        // reviewCard3.style.display = 'none';
+        // indicator1.style.color = '#624DE7';
+        // indicator2.style.color = '#9483FF';
+        // indicator3.style.color = '#9483FF';
         reviewCard++;
     }
     else if(reviewCard == 2){
         reviewCard1.style.display = 'none';
-        reviewCard2.style.display = 'flex';
-        reviewCard3.style.display = 'none';
-        indicator1.style.color = '#9483FF';
-        indicator2.style.color = '#624DE7'
-        indicator3.style.color = '#9483FF';
+        // reviewCard2.style.display = 'flex';
+        // reviewCard3.style.display = 'none';
+        // indicator1.style.color = '#9483FF';
+        // indicator2.style.color = '#624DE7'
+        // indicator3.style.color = '#9483FF';
         reviewCard++;
     }
     else if(reviewCard == 3){
         reviewCard1.style.display = 'none';
-        reviewCard2.style.display = 'none';
-        reviewCard3.style.display = 'flex';
-        indicator1.style.color = '#9483FF';
-        indicator2.style.color = '#9483FF';
-        indicator3.style.color = '#624DE7'
+        // reviewCard2.style.display = 'none';
+        // reviewCard3.style.display = 'flex';
+        // indicator1.style.color = '#9483FF';
+        // indicator2.style.color = '#9483FF';
+        // indicator3.style.color = '#624DE7';
         reviewCard = 1;
     }
 }, 5000);
@@ -315,3 +315,18 @@ faqArrow3.addEventListener('click', function(){
         answerDisplay2 = 0;
     }
 })
+
+function sendMail(){
+    var parms = {
+        name: document.getElementById("name").value,
+        cell: document.getElementById("cell").value,
+        category: document.getElementById("category").value,
+    };
+    emailjs.send("service_k1ngysc", "template_sakbrim", parms).then(res => {
+        document.getElementById('name').value = "";
+        document.getElementById('cell').value = "";
+        document.getElementById('category').value = "";
+        console.log(res);
+        alert("Message sent");
+    }).catch((err) => console.log(err));
+}

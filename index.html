@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Istok Web' rel='stylesheet'>
     <title>Capps</title>
+
 </head>
 <body>
     <div id="home" class="hero-section">
@@ -253,10 +254,10 @@
                 <h3 class="form-heading">Consultation for Free</h3>
                 <p class="form-message">Unlocking Solutions, One Consultation at a Time:<br> Your Path to Informed Decisions</p>
                 <form action="submit">
-                    <input class="name-field" type="text" placeholder="Your Name"><br>
-                    <input class="number-field" type="text" placeholder="Phone number"><br>
-                    <input class="category-field" type="text" placeholder="Project category"><br>
-                    <button class="submit-btn" type="submit">SEND</button>
+                    <input class="name-field" id="name" type="text" placeholder="Your Name"><br>
+                    <input class="number-field" id="cell" type="text" placeholder="Phone number"><br>
+                    <input class="category-field" id="category" type="text" placeholder="Project category"><br>
+                    <button class="submit-btn" onclick="sendMail()" type="submit">SEND</button>
                 </form>
             </div>
         </div>
@@ -659,6 +660,20 @@
         </div>
 
     </div>
+    
     <script src="script.js"></script>
+
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+            publicKey: '5yIQR9_GJKWQEPamb',
+            });
+        })();
+    </script>
 </body>
 </html>
